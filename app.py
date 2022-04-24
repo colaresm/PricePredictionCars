@@ -28,8 +28,8 @@ def returnprine():
     citympg=normalizedata(float(request.args['citympg']),25.219512,6.542142)
     highwaympg=normalizedata(float(request.args['highwaympg']),30.751220,6.886443)
     y_r =reg.predict( [[drivewheel,  wheelbase,  carwidth,  carheight,
-        curbweight,  enginesize, fuelsystem, boreratio,
-        horsepower, citympg,highwaympg]])
+    curbweight,  enginesize, fuelsystem, boreratio,
+    horsepower, citympg,highwaympg]])
     y_predicted = np.power(y_r*lambdav+1,1/lambdav)-1
     y_predicted = y_predicted*7969.3435057200+13276.710570731706
     people = [{'price': round(y_predicted[0],2)}]  
